@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 const App = () => {
@@ -13,7 +13,6 @@ const App = () => {
     return sum;
   };
 
-  const beforeMaxComputation=useMemo(()=>maxComputation(),[increment])
 
   return (
     <div className="App">
@@ -21,7 +20,7 @@ const App = () => {
         <button onClick={() => setIncrement(increment + 1)}>Increment</button>
         <span>{increment}</span>
       </div>
-      <div>{beforeMaxComputation}</div>
+      <div>{maxComputation()}</div>
     </div>
   );
 };
